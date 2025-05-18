@@ -1,0 +1,303 @@
+.rightbar {
+    flex: 3.5;
+  }
+  
+  .rightbarWrapper {
+    padding: 10px 10px 0 0;
+  }
+  
+  .birthdayContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .birthdayImg {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+  .birthdayText {
+    font-weight: 300;
+    font-size: 15px;
+  }
+  
+  .rightbarAd {
+    width: 90%;
+    height: 700px;
+    border-radius: 10px;
+    margin: 30px;
+    object-fit: contain;
+  }
+  
+  .rightbarTitle {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .rightbarInfo {
+    margin-bottom: 30px;
+  }
+  
+  .rightbarInfoItem {
+    margin-bottom: 10px;
+  }
+  
+  .rightbarInfoKey {
+    font-weight: 500;
+    margin-right: 15px;
+    color: rgb(47, 47, 46);
+  }
+  
+  .rightbarInfoValue {
+    font-weight: 300;
+  }
+  
+  .rightbarFollowings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+  
+  .rightbarFollowing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .rightbarFollowing:hover {
+    background-color: rgba(29, 149, 224, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .rightbarFollowingImg {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background-color: #f5f5f5;
+  }
+  
+  .rightbarFollowing:hover .rightbarFollowingImg {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .rightbarFollowingName {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.2s ease;
+  }
+  
+  .rightbarFollowing:hover .rightbarFollowingName {
+    color: #1d95e0;
+  }
+  
+  /* Badge en ligne optionnel */
+  .rightbarFollowing::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #4ade80;
+    border: 2px solid white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Pour afficher le badge si l'ami est en ligne */
+  .rightbarFollowing.online::after {
+    opacity: 1;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .rightbarFollowings {
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 1rem;
+    }
+    
+    .rightbarFollowingImg {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .rightbarFollowingName {
+      font-size: 0.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .rightbarFollowings {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .rightbarEditButton {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #42b72a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .rightbarEditButton:hover {
+    background-color: #36a420;
+  }
+  
+  /* Modal Styles */
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    max-width: 90%;
+  }
+  
+  .modalContent h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #1877f2;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  .formGroup input,
+  .formGroup select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .modalButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .saveButton {
+    padding: 8px 16px;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .saveButton:hover {
+    background-color: #166fe5;
+  }
+  
+  .cancelButton {
+    padding: 8px 16px;
+    background-color: #e4e6eb;
+    color: #050505;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancelButton:hover {
+    background-color: #d8dadf;
+  }.rightbarFriend {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    background-color: #1d95e093;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 0.05);
+  }
+  
+  .rightbarProfileImgContainer {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  
+  .rightbarProfileImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .rightbarInfo1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  .rightbarUsername {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+    user-select: none;
+  }
+  
+  .unfollowBtn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .unfollowBtn:hover {
+    background-color: #c0392b;
+  }
+  
